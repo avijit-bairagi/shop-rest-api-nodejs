@@ -1,0 +1,40 @@
+<%- include('../includes/header.ejs')%>
+<%- include('../includes/header-body.ejs')%>
+<%- include('../includes/navigation.ejs')%>
+
+<main>
+
+    <div class="container">
+
+        <form action="/admin/add-product" method="POST">
+            <div class="form-group">
+                <label for="title">Poduct Name</label>
+                <input type="text" class="form-control" id="title" aria-describedby="titleHelp"
+                    placeholder="Product Title" name="title" required>
+            </div>
+
+            <div class="form-group">
+                <label for="imageUrl">Image Url</label>
+                <input type="text" class="form-control" id="imageUrl" placeholder="Image Url" name="imageUrl"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" class="form-control" id="price" placeholder="Price" name="price"
+                    step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea type="text" class="form-control" id="description" placeholder="Description" name="description"
+                    row="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+
+    </div>
+
+</main>
+
+<%- include('../includes/footer.ejs')%>

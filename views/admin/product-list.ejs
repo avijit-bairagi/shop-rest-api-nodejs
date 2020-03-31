@@ -1,0 +1,44 @@
+<%- include('../includes/header.ejs')%>
+<link rel="stylesheet" href="/css/product-list.css">
+<%- include('../includes/header-body.ejs')%>
+<%- include('../includes/navigation.ejs')%>
+
+<main>
+
+    <div class="container">
+
+        <% if(products.length > 0) { %>
+
+        <div class="row">
+
+            <% let i = 0; for(let product of products) { let id = 'product_' + i++  %>
+
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <img src="/images/no-product-img.png" alt="" class="img-responsive">
+                    <div class="caption">
+                        <h4 class="pull-right">$<%= product.price %></h4>
+                        <h4><a href="#"><%= product.title %></a></h4>
+                        <p><%= product.desc %></p>
+                    </div>
+                    <div class="space-ten"></div>
+                    <div class="btn-ground text-center">
+                        <a href="/admin/edit-product"><button type="button" class="btn btn-primary"><i class="fa fa-edit"></i> Edit</button></a>
+                        <a href="/admin/delete-product"><button type="button" class="btn btn-primary"><i class="fa fa-trash"></i> Delete</button></a>
+                    </div>
+                    <div class="space-ten"></div>
+                </div>
+            </div>
+
+            <% } %>
+        </div>
+        <% }  else { %>
+        <div class="container">
+            <h2>No Products found</h2>
+        </div>
+        <% } %>
+    </div>
+
+</main>
+
+<%- include('../includes/footer.ejs')%>
